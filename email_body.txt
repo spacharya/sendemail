@@ -1,0 +1,9 @@
+Hi <<<Name>>>,
+
+I am interested in being part of the <<<company_name>>> team.
+
+Looking forward to hearing back from you to discuss the same.
+
+Thanking You,
+
+- Suraj Acharya
