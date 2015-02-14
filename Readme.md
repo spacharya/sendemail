@@ -1,5 +1,6 @@
 This is used to send Emails to people and to personalize it.
-Steps.
+Steps : 
+
 1. Clone this repository.
 2. In the file email_body.txt Write your email body.
 3. I have added two personalizations namely Name and Company Name. Use the same manner to keep the body.
