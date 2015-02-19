@@ -17,8 +17,8 @@ def send_email():
     s = smtplib.SMTP("smtp.gmail.com", 587)
     s.ehlo()
     s.starttls()
-    pwd = getpass.getpass()
     email  = input("Email Address")
+    pwd = getpass.getpass()
     s.login(email, pwd)
 
     part = MIMEBase('application', 'octet-stream')
@@ -46,7 +46,14 @@ def send_email():
         confirm = input("Hit 1 to confirm anything else to retry 0 to exit")
         if confirm == "1" :
             msg['To'] = to
-            s.sendmail(me, to, msg.as_string())
+            try:
+                s.sendmail(me, to, msg.as_string())
+            except:
+                s = smtplib.SMTP("smtp.gmail.com", 587)
+                s.ehlo()
+                s.starttls()
+                s.login(email, pwd)
+                s.sendmail(me, to, msg.as_string())
         elif confirm == "0":
             print("Exiting Module ")
             break
